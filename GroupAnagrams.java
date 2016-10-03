@@ -1,15 +1,16 @@
 public class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        HashMap<String, List<String>> KeyVals = new HashMap<String, List<String>>();
+        HashMap<String, ArrayList<String>> KeyVals = new HashMap<String, ArrayList<String>>();
         for (String str: strs) {
             ArrayList temp;
-            if Sorted(str) in KeyVals.keys() {
+            ArrayList newList;
+            if (KeyVals.containsKey(Sorted(str))) {
               temp = KeyVals.get(Sorted(str));
               temp.add(str);
             } else {
-                ArrayList<String> temp = new ArrayList<String>();
-                temp.add(str);
-                HashMap.put(str, temp);
+                newList = new ArrayList<String>();
+                newList.add(str);
+                HashMap.put(Sorted(str), newList);
             }
         }
         ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
@@ -20,6 +21,7 @@ public class Solution {
     }
     
     public String Sorted(String str) {
-        \\ Sorts a given string.
+        str.sort();
+        return str;
     }
 }
